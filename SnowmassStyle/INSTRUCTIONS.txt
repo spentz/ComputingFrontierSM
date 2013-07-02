@@ -1,0 +1,45 @@
+
+
+INSTRUCTIONS:
+
+To convert LaTeX to pdf, issue the command
+
+pdflatex driverFile.tex   three times in succession.  The resulting pdf file 
+should be identical to the file  driverFile-result.pdf in the distribution.
+
+
+To use the style files given here to create your own article for the Snowmass 
+2013 proceedings, please follow the following steps.
+
+1. Create a new directory with the name of your working group, e.g.  TopQuark.
+
+2. Copy the files wgreport.tex and authorlist.tex from the directory Magnetism
+      into your new directory.
+
+3. Change the author names and section titles to your needs.  Please provide a 
+      label for the whole report (a chapter of the final book) and for each 
+        section.
+
+4. Fill in the text.  Please make use of the macros in  workshopsymbols.tex where
+      they are appropriate.
+
+5. Fill in the references.  A convenient method is the look up the reference in 
+      INSPIRE, click on the link  "LaTeX (US)", and then paste whatever appears
+        into the bibliography. 
+
+6. Convert figures to pdf and then refer to them in the LaTeX.  A convenient
+        command to insert a figure is  (for myfigure.pdf in TopQuark)
+
+          \includegraphics[width=0.3\hsize]{TopQuark/myfigure.pdf}
+
+    A example of an inserted figure and a displayed table can be found in 
+            Magnetism/wgreport.tex
+
+    More complicated examples are found in the directories ChargedLeptons and 
+       HeavyPhotons, which contains chapters of the Intensity Frontier report.
+
+7.  When your paper is complete, send your directory to Michael Peskin. 
+           (mpeskin@slac.stanford.edu).
+
+Thank you very much!
+
