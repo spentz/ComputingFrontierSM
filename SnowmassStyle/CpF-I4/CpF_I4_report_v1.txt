@@ -1,0 +1,76 @@
+Over time, HEP experiments have become larger and more complex, and generate ever larger datasets, and require ever higher
+precision analysis.  In addition, the breadth of experiments scientifically relevant to Particle Physics has increased to
+include fields such as observational cosmology and deep underground experiments.
+In order to deal with these changes, HEP software has by necessity become more complex.
+Software complexity has also increased due to evolving language standards, which provide more options to programmers.
+Limitations on power consumption are changing the architecture of computer hardware,
+requiring fundamental changes in software design to continue the 'Moore's law' scaling of computing performance vs cost.
+Increased software complexity is measured not just in
+the number of lines of code, but in the sophistication of the algorithms employed, and in the diversity and
+breadth of the software technologies employed.
+
+The increasing sophistication of HEP software has had demonstrable positive effects on the scientific output of our field,
+such as by improving the accuracy
+of simulations, and by improving the efficiency and precision of scientific conclusions extracted from data using
+techniques like Multi-Variate-Analysis.
+Improved software organization, management, and testing standards have also benefited scientific output by allowing coherent and consistent data sets for analysis to be produced within hours of logging.
+
+Increasingly complex software also has costs.  For instance, software development now takes a significant fraction
+of the engineering and operations resources required to perform
+HEP scientific research.  Similarly, for scientists to
+make effective use of complex software, more training, and more professional-level support are often required.
+Increasingly complex software can also have direct financial costs, such as requiring more computing power to
+execute, through commercial software license fees, and by requiring professionally-trained computer support personnel.
+The trends of increasing software sophistication, evolving hardware platforms, and
+increasing reliance on software for scientific progress show no signs of reversing in the near future.
+The challenge for the next decade is then to guide the development of HEP software so as to maximize the scientific
+output, while respecting the real resource constraints experienced by the field.
+
+The primary responsibility for the scientific success of an experiment lies with the scientists organizing
+and collaborating on that experiment.  This includes the responsibility for the major software design, organization,
+and support decisions which every experiment must make.  However, no modern experiment can write its software completely
+'from scratch'.  To the extent that experiments have common features, sharing of common solutions can help reduce the
+cost and risk of their software development.  Furthermore, the development cost of some common software is beyond the scope of
+a single experiment, requiring a broader community of contributors to create and maintain the software that benefits
+them all.  The main purpose of this report is to document trends in pan-experimental software development and training
+that look promising for the entire field.  The following sections describe the software development and
+training areas where we believe common
+standards, methods, and support can be of general benefit to the overall scientific productivity of HEP.
+
+
+Toolkits
+-Continue to support established toolkits (G4, root, ...)
+-document successful models of commercial toolkit support (mathematica, matlab, ...)
+-encourage creation of new toolkits from existing successful common software (generators, tracking, ...)
+
+Software Management
+-Consolidate and standardize software management tools to minimize cross-experimental 'friction'
+
+Software Reuse
+-encourage lateral tech transfer between experiments
+-use previous/existing experiment's software to prototype new experiments
+-facilitate code sharing via public open source repositories
+-encourage reverse-engineering of proven successful algorithms as a way of migrating them to modern code fabric
+
+Training
+-use certification to document expertise and encourage learning new skills
+-encourage training as a continuing experimental activity
+-use mentors to spread scientific software development standards
+-involve computing professionals in the training of scientific domain experts
+-use online media to share training
+-use workbooks as evolving, interactive software documentation
+-emphasize learning computing and software skills that are marketable for non-academic jobs
+
+Staffing
+-integrate computing professionals as part of the experimental team, over the life of the experiment
+-recognize software efforts as sub-projects of the experiment
+-form development teams combining software professionals with scientists in order to
+produce high quality implementations that meet the technical and physics performance needs of the experiment
+
+Software Development for new Hardware Architectures
+-Significant investments in software are needed to adapt to the evolution of computing processors
+-encourage development of thread-safe algorithms
+-identify problem domains where parallel programming can improve execution performance on massive multi-core platforms,
+and develop solutions for those
+-develop flexible software architectures that can exploit a variety of possible future hardware options (grid, cloud,
+small local clusters, ...)
