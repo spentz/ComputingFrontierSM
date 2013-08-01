@@ -1,0 +1,9 @@
+
+# ignore Logs etc #
+######################
+*.log
+*.out
+*.pdf
+*.aux
+.DS_Store
+
