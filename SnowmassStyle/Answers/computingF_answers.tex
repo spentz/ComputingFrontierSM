@@ -1,0 +1,189 @@
+%%%%%% Computing Chapter %%%%%%%%%%%%%%%%
+ 
+\chapter{Computing Frontier: Answers to Questions from other Frontiers}
+\label{chap:mag}
+
+\begin{center}\begin{boldmath}
+
+%\input Answers/authorlist.tex
+%Conveners are also listed separately in authorlist.tex
+
+\end{boldmath}\end{center}
+
+
+
+\section{Answers to Questions}
+\label{sec:comp-intro}
+
+
+
+
+
+
+\subsection{COMF1}
+
+
+{\bf
+ Theoretical physics requires increasingly more significant computing resources. How
+is this being incorporated into computing plans? EF-Computing: To what extent is
+high-energy physics still generating the world's largest randomly-accessed databases?
+Can we claim to be a world leader in data science? Along what dimensions?}
+
+The relevant theorists have been participating in various planning
+exercises like the one carried out by NERSC to determine the future
+needs of its users.  In addition, there was a series of workshops a few
+years back establishing user requirements for exascale computing.  All
+of the theoretical tasks of the Computing Frontier were represented
+then.  Of course, plans change and groups need to apply for and obtain
+allocations.  There are no guarantees, but Congress may get more upset
+when the US does not have the world's fastest computer than they do when
+we don't have the highest energy accelerator.
+
+In the early 1990s, the BaBar Objectivity database reached close to one
+Petabyte in size and claimed to be the world's largest database.  The
+technology developed by SLAC (essentially a server architecture
+conceptually equivalent to xrootd) continues to allow Objectivity Inc. to
+do good, if not stellar, business with "three letter agencies" interested
+in large-scale analytics.
+
+Some killjoys carped at the fact that Ojectivity DB was not real database
+(i.e. a relational database).  A more serious objection, fortunately known
+only to a few, was that there was no way a petabyte disk-based database
+could provide responsive random access because of the poor (and now much
+worse) random access performance of disks.  The Objectivity software did
+support random access.  Note that any high-performance relational (or not
+relational) database has to be substantially memory resident at a cost we
+could never afford.
+
+There is no way that petabytes of root files would be considered a random
+access database today.
+
+The object catalog technology being developed for LSST (amusingly, once
+again using xrootd concepts) has been convincingly shown to be scalable to
+petabytes.  This is a true relational database using thousands of MYSQL
+back-end servers linked by an xrootd switchyard to query decomposers.  It
+uses disks, so random access rates are low, but the database is decomposed
+into so many pieces that full table scans are quite fast.
+
+In terms of piles of data that can arguably be called databases, it is
+probable that the customer behavior databases amassed by eBay, Google
+etc., most of which would be classified as NOSQL databases, have left us
+behind.
+
+We still lead in worldwide distributed data management in a heterogeneous
+ensemble of independent computer centers.
+
+
+\subsection{COMF2}
+
+{\bf
+The Grid was commissioned along with the LHC detectors. ESnet traffic has
+increased 10x every four years throughout the LHC lifetime. Will improvements in
+networking infrastructure, QoS, monitoring, etc. continue to keep up with LHC 
+demands for distributed computing? In what directions are new enabling technologies
+required and when must they mature to again keep up with the LHC machine and
+detector upgrades? }
+
+
+There are no fundamental technical barriers associated with transporting 10x more traffic in 4 years. However, even at that traffic level and certainly beyond it, basic and applied research is necessary to develop cost-efficient architectures; manage complexity; exploit programmability and other emerging network paradigms; and assure that networks and applications become more tightly integrated.  Whether the overall cost of networking remains stable over the next decade depends on the declining cost-curve for optical components, as well as the price of trans-Atlantic capacity - but there is a broad market for both.  In general, it's much cheaper to transport data than to store it.  Apart from basic and applied research, a number of cultural and operational habits need to be overcome in order for networks to continue to keep up with LHC demands: campuses must deploy secure science data enclaves - or Science DMZs - engineered for the needs of data-intensive science, and expectations for network performance must be raised significantly, so that collaborations take maximum advantage of current and emerging capabilities.
+
+
+US HEP has benefitted massively from an active involvement in the
+provision of the networks it needs.  A need for vigorous but judicious
+involvement in networking for science will continue as LHC upgrades bring
+more pressure on the network infrastructure.  In the main, ESNet and
+worldwide research network infrastructures have served HEP well, and often
+exhibit strong motivation to meet HEP needs.  Nevertheless, HEP will
+probably remain the most demanding application served by the worldwide
+network research networks, and must take responsibility for pioneering the
+exploitation of new technologies that are needed for the most data
+intensive sciences. These technologies include network links at the
+technological limit and network management technologies that can can
+support a dynamic co-esxitence between major data flows and vital general
+purpose scientific data traffic.
+
+
+\subsection{COMF3}
+
+{\bf
+How do the different physics frontiers--and associated theory and physics simulation-
+-differ in their needs for future computing technology evolution? In what respects
+can they benefit from common computing technology evolution?}
+
+On the theory side, what we want may not be what we get.  Large scale
+calculations are going to be limited by the energy consumption of the
+computer.  Writing efficient codes is likely to become more difficult as
+we move to more exotic processors like GPUs or the Xeon Phi.  It is not
+clear that one can abstract the details of the hardware in such a way
+that a single code can be written for both those targets.  The Xeon Phi
+requires three levels of parallelization for high performance.  SIMD
+vectorization on the core,  OpenMP at the chip level and, message
+passing such as MPI across chips.  It might be very important to develop
+communication avoiding algorithms that use more flops but move fewer
+bytes.  It is interesting to hear computer scientists project how many
+picojoules are required to do a flop or move data from one node to
+another.
+
+Large scale simulations in the cosmic frontier and lattice gauge theory
+are probably fairly similar.  
+
+The comments above apply very well to Accelerator Science too.  We are already developing communication avoidance algorithms and doing the best we can to parameterize our data structures so we can have as much as possible "architecture independent" implementations, but there are limits as to how far these techniques can get you.  We have a fairly advanced R\&D program to port algorithms on the GPU and just starting on other options (Phi) and maybe, at the end, these are necessary pains until the dust settles, since to continue moving forward we do require large-scale computations. 
+
+Cosmic frontier simulation codes face a similar situation as with lattice QCD and accelerators. We have some codes that are already fully exploiting GPUs and Xeon Phis and others that -- because of complexity issues -- are still waiting for the hardware and software mix to stabilize. In the realm of supercomputing, the technology evolution is out of our control, so whatever we get is what we will have to exploit. 
+
+The IF experiments share the need of continued development of common HEP tools like Geant4 and ROOT with the other frontiers.  In addition, the IF experiments will heavily benefit from the development of a data handling system that is easily distributed and has transparent access for the user.  The example of the tiered computing used by the LHC experiments is a good basis for developing the model for the IF.  It is expected that any solution developed would provide access to the data as well as methods for submitting jobs to the grid. Advances in adapting key software tools to exploit multi-threading and GPU environments will also be beneficial across frontiers. 
+
+
+The divide between massively parallel "leadership class" computing
+employed by LQCD configuration generation and the massive throughput-based
+employed by experimental HEP is more sociological than technical.  On
+close examination, the leadership class systems, for example OLCF and
+ALCF, can provide quite cost-effective throughput based computing for
+experimental HEP, but this is not seen as their mission.  Historically,
+the leadership class supercomputer centers have not been particularly
+data-friendly, but this is changing rapidly with the realization that an
+ability to treat "big data" problems is vital.
+
+In technology, HEP clusters and leadership class systems are converging.
+Often the CPUs are the same, and the problems of poor utilization of CPU
+capabilities are common. Challenges such as "can we exploit GPUs
+effectively?" are are also common ground, but the highly capable
+intercommunications networks of leadership-class facilities remain largely
+irrelevant to experimental HEP.
+
+Bottom line, there is a very large overlap between the work required to
+make HEP code run effectively on an 2020 laptop and that required to
+exploit a 2020 Leadership Class Facility.
+
+
+\subsection{COMF4}
+
+{\bf
+ Proposed very high statistics experiments at the Z resonance require large rates --
+many kHz -- at which data is written to storage. What are the limits?}
+
+
+The limits are those of tolerable cost for storage and analysis.
+Tolerable cost is established in an explicit or implicit optimization of
+physics dollars for the entire program.  The optimum rate of data to persistent
+storage depends on the capabilities of technology, the size and budget of
+the total project, and the physics lost by discarding data. There is no
+simple answer!
+
+
+\subsection{COMF5}
+ 
+ {\bf
+ What are the requirements and opportunities for cosmological computing -- in both
+theoretical simulations and data analysis -- to enable the extraction of new particle
+physics information from astrophysical observations over the coming decade?}
+
+\textcolor{red}{
+{\bf Answer coming from Salman...}}
+
+
+
+\end{document}
+
+
+
