@@ -1,0 +1,10 @@
+\subsection{Muons colliders}
+
+The mission of the Muon Accelerator Program (MAP) \cite{map} is to develop and demonstrate the concepts and critical technologies required to produce, capture, condition, accelerate, and store intense beams of muons for Muon Colliders and Neutrino Factories. The goal of MAP is to deliver results that will permit the high-energy physics community to make an informed choice of the optimal path to a high-energy lepton collider and/or a next-generation neutrino beam facility. Coordination with the parallel Muon Collider Physics and Detector Study and with the International Design Study of a Neutrino Factory will ensure MAP responsiveness to physics requirements.
+
+
+For a muon colliders an essential computational need is the optimization of cooling channels. Muon cooling is required to reduce the beam phase space so the beam can be efficiently accelerated and so a muon collider will have increase luminosity. A typical muon-cooling channel is 200-300 meters long, and the interaction of the beam with the matter in the absorbers is an essential aspect of its operation. Simulations of such channels typically require about 1-5 CPU-seconds per event, and about a half-million events are required to obtain good statistical accuracy (a substantial fraction of the muons are lost or decay). An optimization run with perhaps a dozen free parameters typically requires several thousand iterations, each of which requires about a million CPU-second, totaling on the order of $10^9$ CPU-seconds. 
+
+Recent parallelization of the simulation codes  have allowed orders of magnitude speed up by running on HPC. In addition to cooling channel target, front end, acceleration, collider, decay rings, and MDI all also require significant modeling, increasing the computing needs required. In turn, muon collider simulations will also require the integration of more physics phenomena such as single particle optics, space charge effects, beam-beam effects and other collective effects. Interaction of the beam with plasma in gas-filled cavities and other materials must also be considered, as well as radiation, particle decay, etc.
+
+

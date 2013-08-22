@@ -1,0 +1,56 @@
+Thanks to sustained advances in hardware and software
+technologies, computer modeling is playing an increasingly
+important role for particle accelerators, making it logical to
+strengthen programmatic activities. Numerous simulation codes
+have been developed, and with a few notable exceptions (e.g., the
+SciDAC funded collaboration) the development paradigm has largely
+been: a code linked to a project or specialized topic, developed
+by a researcher (usually a physicist), with occasional help from
+computer scientists.  Maximizing scientific output per dollar
+means maximizing the usability of the pool of codes while
+minimizing spending on development and support, including through
+reductions of duplication/increases in modularity and code
+interoperability.
+
+Development and application of accelerator algorithms and codes
+have become extremely complex and specialized endeavors, calling
+for teams including computational physicists (SciDAC but
+expand...), applied mathematicians and computer scientists. Such
+an approach is being adopted elsewhere, and calls for a higher
+level of coordination among modeling and code development
+efforts, with progressive integration of codes into a tool set.
+This is all the more timely as computer architectures are
+transitioning to new technologies, requiring adaptation.
+Separation between software for personal computers versus
+supercomputers is also diminishing as the former become multicore
+and the later commodity based, and it is essential to envision
+tools that function well on a broad range of platforms.
+
+A high-level scripting interface for rapid development and
+prototyping, offering easy interfacing with high performance
+languages and expandability, represents one solution to the
+challenge of coupling of existing codes while minimizing
+disruption and enabling both interoperability and expansion
+capabilities. With such a construct, existing codes continue
+unmodified preserving the very significant investments in
+existing accelerator modeling tools, while their functionalities
+are exposed to allow combined use for multi-physics simulation.
+In the past decade, the Python scripting language has emerged as
+a high-level solution for rapid development and prototyping which
+can be easily coupled to the high-performance programming
+languages.
+
+% JRC: I disagree with the above.  We have done/are doing extensive
+% multiphysics with Vorpal without the above approach, but instead
+% through well-defined C++ APIs.  Further, the above approach with
+% shared library loading is known NOT to work well on LCFs.
+% I have introduced a compromise, which is to say this is one
+% direction, without saying that it gives "unprecedented power".
+
+Current practice is also less than optimal in that with few exceptions
+the users of HPC accelerator codes are the developers.  Scientific
+productivity would be enhanced by making the accelerator codes more
+widely usable.  This include simplified problem setup and submission
+through graphical user interfaces with client-server technology, as
+has already occured in, e.g., the HPC visualization community.
+

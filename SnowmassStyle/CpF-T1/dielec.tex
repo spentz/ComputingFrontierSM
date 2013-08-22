@@ -1,0 +1,55 @@
+\subsection{Dielectric structures}
+
+Dielectric structures have been found promising in both the GHz
+and optical wavelengths, with both types of structures relying on
+photonic structure principles of frequency-selective confinement.
+In the GHz range, photonic structures formed from arrays of
+dielectric rods have been found with high Q values for the
+accelerating mode but with reduced wakefields due to the lack of
+confinement of higher-order modes.  In the optical wavelengths,
+the dielectric breakdown field is in the range of 10 or more
+GeV/m, and so hold out the promise of acceleration gradients that
+are two orders of magnitude greater than conventional systems.
+In the optical, structures vary from 3D, such as the woodpile, to
+dielectric fibers, which are cheap, as they are used by the
+telecom industry.
+
+With many principles and ideas of using dielectric structures
+having been elucidated, there is now a need for assessing many
+practical issues.  These include issues of pure electromagnetics,
+such as how to efficiently couple energy into these structures
+and what structures have sufficient Q values, through
+self-consistent effects, such as whether there are instabilities
+due to wake fields.  For such studies, algorithmic advances are
+needed, with one direction being the need for rapid geometry
+layout and meshing algorithms for these complex structures, as
+well as fast, scalable, and accurate algorithms able to compute
+$>10^9$ degrees of freedom.  As well, algorithms need modification
+to take advantage of the many computational accelerators and
+advanced instructions (GPU, MIC, AVX2) now or soon available.
+Moreover, it is important to develop this software in a
+maintainable fashion, which cannot be writing different
+implementations for each new architecture.
+
+As well, there is a need for integration of optimization to find
+the systems with the best coupling, highest Q, lowest wake
+fields, etc.  Such optimizers need to be tailored to the type of
+simulations.  For example, optimizers based on differentiation
+may not work well with some simulations that have significant
+error or particle noise.
+
+As the field progresses, there will be a need for multi-physics.
+Because the electromagnetic field deforms the structures, there
+is a need for electro-acoustic couplings, and because it heats
+the structure, electro-thermal coupling is additionally needed.
+
+With the above developing tool suites, there is a need finally to
+carry out the extensive studies of these systems.  There are many
+configurations now (RF, optical; 3D woodpiles, gratings; 2D rods,
+fibers) with many parameters to vary.  Optimization campaigns are
+needed, but they cannot be done blindly.  With so many
+parameters, physical intuition will also be important.  Hence,
+there will need to be a partnership among computational
+physicists, algorithm developers, and computer scientists to
+bring the promise of this field to fruition.
+

@@ -10,7 +10,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}\begin{boldmath}
 
-\input CpF-T1/authorlist.tex
+\input AcceleratorScience/authorlist.tex
 %Conveners are also listed separately in authorlist.tex
 
 \end{boldmath}\end{center}
@@ -23,30 +23,30 @@
 \section{Introduction}
 \label{sec:acc-sc-intro}
 
-\input CpF-T1/introduction2.tex
+\input AcceleratorScience/introduction2.tex
 
 \section{Energy Frontier}
 \label{sec:acc-sc-ef}
-\input CpF-T1/plasmaaccel.tex
+\input AcceleratorScience/plasmaaccel.tex
 
-\input CpF-T1/dielec.tex
+\input AcceleratorScience/dielec.tex
 
-\input CpF-T1/muon.tex
+\input AcceleratorScience/muon.tex
 
 \section{Intensity Frontier}
 \label{sec:acc-sc-if}
-\input CpF-T1/intensityFrontier.tex
+\input AcceleratorScience/intensityFrontier.tex
 
 \section{Conventional accelerator technology for both Energy and Intensity Frontier applications}
 \label{sec:acc-sc-all}
-\input CpF-T1/em.tex
+\input AcceleratorScience/em.tex
 
 \section{Accelerator modeling science needs}
-\input CpF-T1/usability.tex
+\input AcceleratorScience/usability.tex
 
 \section{Summary}
 \label{sec:acc-sc-summary}
-\input CpF-T1/summary.tex
+\input AcceleratorScience/summary.tex
 
 \Acknowledgements
 

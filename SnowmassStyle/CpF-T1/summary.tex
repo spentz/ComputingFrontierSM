@@ -1,0 +1,159 @@
+The computational and computing needs for supporting Accelerator
+Science are dominated by the need to optimally utilize
+High-Performance-Computing (HPC) and the availability of tools
+and resources that makes this utilization possible.  Here HPC is
+defined in the conventional way, where parallelism and fast
+interconnect is essential to the computation, since each
+simulation step requires communication between thousands to
+millions of processors. The projected computing  needs for all
+the major modeling applications from both energy and intensity
+frontiers is shown in Table~\ref{tab:CompNeeds}, where the units
+are based on the current performance of our codes on Hopper at
+NERSC. Note that in this report we do not detail data storage and
+networking needs (with one exception), because our area will not
+drive the overall requirements, which are dominated by HEP
+experiment needs.  We will leverage from the solutions
+implemented to support these programs.
+
+A common theme from the requirements communicated both by our
+user community (accelerator scientists operating machines or
+performing R\&D at test facilities) and computational accelerator
+physicists, is the need for programmatic coordination and support
+of code development and computing R\&D to create a sustainable
+computational accelerator science program.  Porting of our
+algorithms and workflows to new computing architectures
+(light-weight CPU plus accelerator) and the R\&D necessary to
+create and evaluate new algorithms is an important component of
+such coordinated program (including close interactions with HPC
+centers to utilize test-beds of new architectures). An example of
+such programmatic support today is the SciDAC program, although
+it is desirable that in the future there is more focus on the
+specific physics solutions needed to further develop our tools.  Another
+common theme is the need for supporting the development of
+community libraries and tools, including standardized user
+interfaces, geometry and data descriptions, I/O and analysis tools.
+Because our applications require true HPC capabilities,
+development of generic workflow tools that perform in an HPC
+environment as well as local workstations and clusters is very important, as is the development and
+integration to our toolkit of parameter optimization libraries,
+that will be available across all HPC platforms.  The development
+of such environment will enable experimentalists and machine
+operators to take advantage of these computational capabilities
+and will be essential in training students and young researchers
+to help develop the new accelerator concepts and technologies
+that will move the field of particle accelerators forward.   In
+addition, it is essential for such program to support and
+coordinate physics model validation and verification, ultimately
+with comparisons to experimental data of well controlled
+experiments in test facilities or operating accelerators.
+
+Intensity Frontier machines of the future require control room
+feedback capabilities (because of the loss implications), a
+capability that is also important to Energy Frontier test
+facilities (for guiding and interpreting experiments).   Would it
+be possible with utilization of new computing technologies to
+deliver such fast turnaround?  The challenge on both the
+performance of the computational tools and the availability of
+computing resources becomes even  more daunting if we consider
+the need to analyze the simulated data in order to extract useful
+information.  The analysis of the simulated data ($\sim$ TB) has
+to produce the same quantities observed by the beam diagnostic
+detectors.  Note that this is a more general requirement, because
+it is necessary for accurate comparisons of simulated and
+observed data independently of the ability to do that in ``almost
+real-time'' in the control room.  The necessary analysis workflow
+and synthetic diagnostic tools similar to those used by HEP
+experiments has to be developed to properly model the detector
+response and maintain and correlate the information of the
+simulated physics variables to those smeared by the model of the
+diagnostics.  Such analysis tools have to be HPC capable, to
+allow for the fast turnaround necessary for control room
+feedback, and they will also require development of new models
+and algorithms.  Finally, this is probably the only application
+in accelerator modeling that data transfer speed and data
+availability, storage, and cataloging has similar requirements to
+those of a HEP experiment DAQ system.
+
+Although different applications have different specific
+requirements for the development of new or more efficient physics
+or computational models, all of them require integrated
+multi-scale, multi-physics modeling.  Currently, for
+high-fidelity modeling, because of the many degrees of freedom
+involved in the problem, we run "single physics" or "few physics"
+model simulations.  Such simulation environment require the
+development of efficient numerical algorithms and models able to
+utilize massive computing resources and the availability of such
+resources at the HPC centers. Deployment of such capabilities
+will enable end-to-end simulations to validate designs based on
+new concepts and end-to-end operational parameter optimization of
+accelerators about to be commissioned.  It should be noted that
+in some cases end-to-end modeling involves integration of physics
+and numerical models developed for different applications (for
+example, for a plasma based accelerator consisting of many plasma
+stages, both plasma physics tools and conventional beam-dynamics
+tools have to be used in the model to produce an optimal
+solution).
+
+Intensity Frontier accelerator needs are dominated by the need to
+control and mitigate beam losses.  This demands both careful
+design of the accelerator structures and accurate modeling of
+beam-halo (and its creation mechanisms) and the accelerator
+geometry (apertures) and accelerator elements fields and
+positions.  This implies tracking many bunches of $\sim 10^9$
+macroparticles per bunch for $\sim 10^5$ turns including
+self-fields, impedance effects, and bunch-to-bunch interactions.
+Finding the optimal parameters of operation will require
+end-to-end  optimization runs, while developing mitigation
+techniques possibly requires the implementation of new physics in the HPC
+environment, to model the new components (for example, electron
+lenses for space-charge compensation). Energy Frontier
+application based on protons have similar modeling needs for loss
+control and mitigation, although in this case impedance effects
+dominate (and possibly beam-beam interactions in a collider) as
+self-interactions are not important.
+
+Energy Frontier accelerator needs are dominated by the need to
+develop end-to-end simulations to characterize and optimize beam
+stability and emittance and transport efficiency.  New
+accelerator concepts have many specific new physics model
+capability needs, for example development of electromagnetic
+plasma and beam methods capable of resolving 0.1 km-scale
+propagation of 10 nm scale emittance bunches and laser drivers,
+and the corresponding bunch conditioning and focusing, but there
+are also a lot of common needs.  For example, radiation and
+scattering, which is relevant to muon collider, plasma and
+gamma-gamma options, and modeling of targets,  including Gas
+dynamics, MHD, and heat loading/dissipation,  which is relevant
+to both EF and ID applications.  Developing these new models
+demands R\&D both on the physics and numerical algorithm area.
+Because of the physics requirements imposed by some of the new
+concepts considered, minimization of numerical noise is very
+important in these applications.  This constraint has a direct
+impact on the choices of numerical techniques for different
+physics implementations.  Plasma accelerators additionally require 
+computation of these effects with accurate plasma and laser dynamics,
+ often requiring unique algorithms.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%   use this format to include a LaTeX table  into your paper
+%%
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{|l|l|} 
+ \hline 
+ Computation (Mhours) & $15000$ \\ \hline
+ Typical cores for production runs & $50000$ \\ \hline
+ Maximum cores for production runs & $5$M\\ \hline
+ Data read and written per run (TB) & $1000$\\ \hline
+ Minimum I/O bandwidth & $100$ GB/sec\\ \hline
+ Memory requirement per core & $0.2$ GB \\ \hline
+Shared file-system space (on site) & $6$ PB\\ \hline
+Shared file-system space (distributed, cataloged) & $60$ PB\\ \hline
+\end{tabular}
+\caption{Compute needs in 10 years.}
+\label{tab:CompNeeds}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

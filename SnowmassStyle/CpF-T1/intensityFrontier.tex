@@ -1,0 +1,86 @@
+Circular accelerators are a central feature in nearly all
+proposed plans for the future of the Intensity Frontier. Since
+the intensity-limiting effects in accelerators are collective in
+nature, accurate studies of potential collective effects are
+critical portions of the design process. The three primary
+collective effects in question are space charge, impedance and
+electron cloud. Ongoing studies of these effects in the Fermilab
+Booster and Main Injector provide concrete examples of the types
+of studies that will be necessary for any Intensity Frontier
+circular accelerator.  Useful simulations have three main
+requirements. The first requirement is a model of the accelerator
+itself that contains enough detail to effectively capture the
+physical effects leading to losses. Important details include
+realistic apertures, magnet fringe fields, misalignments, etc.
+The second requirement is a simulated time period long enough to
+capture the various loss mechanisms that come into play. The
+third is an overall level of fidelity in the simulation great
+enough to have confidence in the final results. These three
+requirements together put constraints on both software, which
+must accommodate the complexity required for realistic models,
+and computing hardware, which must be capable of delivering
+detailed simulations in a timely manner.  For simulations of the
+Main Injector, the first needs are accurate simulations of space
+charge and impedance combined with a detailed model of the
+accelerator. Space charge and impedance-related simulation topics
+to address in the Main injector include space-charge tune shifts
+and tune spreads. These studies will lead into studies of the
+variation of operational parameters to minimize losses, which
+will require many runs as the parameter space is scanned. Further
+studies include simulations of injection beam painting and
+mitigation techniques such as electron lenses. In all cases, the
+simulation program must be benchmarked against corresponding beam
+studies (for example at facilities such as ASTA and UMER). 
+Simulations of relatively new technologies
+such as electron lenses are especially important to pair with
+experimental measurements to validate models.
+
+Electron cloud development and its effect on beam dynamics is
+another subject of concern in the Main Injector. A program to
+simulate electron cloud development is ongoing; simulations of electron
+cloud effects in beam dynamics are planned. Because the electron
+cloud phenomenon is the product of a complex set of physical
+effects, an experimental program to study these effects and
+validate the simulations is also required. Such an effort has
+started, but will require more work to reach the accuracy needed.
+Simulations of space charge and impedance effects in the Booster
+are also of great importance. In the Booster, inter-bunch
+communication through impedance has been shown to critically
+depend on the number of bunches present in the simulation. These
+results indicate that simulations containing the entire 84-bunch
+filled Booster ring are necessary. Such simulations have all the requirements
+of the single-bunch simulations with additional computational
+complexity proportional to the number of bunches. Such
+simulations require supercomputer resources.
+
+The computational requirements of these simulation programs can
+be estimated for the Main Injector. A single Main Injector
+revolution takes roughly 11 microseconds. The time scale
+associated with losses is half a second. The simulations must
+therefore address ~50,000 turns. Simulations must take into
+account the variation of the beta function around the ring,
+sampling several times per period. There are 104 such periods in
+the main injector, meaning that the simulations must contain on
+the order of 500 steps per turn. Detailed simulations must
+therefore contain tens of millions of time steps. The Intensity
+Frontier puts strict limits on acceptable losses. If we take 1e-4
+has the acceptable loss limit, and we require 1\% accuracy in our
+simulations of loss, we require 1e8 macroparticles. Such
+simulations are appropriate for today's supercomputers; when the
+additional factors associated with multi-bunch simulations are
+added to the mix, simulations will require the very cutting-edge
+of current supercomputer technology.
+
+Although we used IF accelerators as an example to
+describe the code capabilities and size of computation necessary to move in the
+future, similar requirements exist for EF hadron colliders, such as VLHC and 
+HL-LHC, although self-fields are not important, and beam-beam effects could be
+important.  In addition, for operation of such IF or EF machines of the future
+control room feedback capabilities is desirable (because of the loss 
+implications).  The necessary analysis workflow
+and synthetic diagnostic tools would be similar to those used by HEP
+experiments today, since they will have to model the beam detector
+response and maintain and correlate the information of the
+simulated physics variables to those smeared by the model of the
+diagnostics. 
+

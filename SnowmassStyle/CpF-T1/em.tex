@@ -1,0 +1,92 @@
+Conventional accelerator technologies play an important role in
+the design of future accelerators both in the Energy Frontier
+(EF) and the Intensity Frontier (IF). These technologies, which
+have been proven to work in existing accelerators, include the
+normal conducting rf and superconducting rf acceleration schemes.
+Electromagnetic simulations of accelerator components and systems
+are essential to the design and optimization of these machines.
+In particular, virtual prototyping of accelerator components and
+systems through high performance computing enables accelerator
+builders to shorten the time for the design and build cycle,
+which will substantially reduce the cost for achieving an
+optimized design that satisfies beam quality preservation and
+machine operational reliability. These machines include
+
+\begin{itemize}
+ \item A high-intensity proton source based on superconducting rf
+   technology (IF)
+ \item A linear electron-positron collider based on superconducting
+   rf technology, capable of delivering 500 GeV -- 1 TeV center of
+   mass energy (EF)
+ \item A linear electron-positron collider based on high-gradient
+   normal conducting rf technology and two beam acceleration techniques,
+   capable of delivering 500 GeV -- 3 TeV center of mass energy (EF).
+   The computational issues in electromagnetic modeling and simulation
+   related to these machines are as follows.
+\end{itemize}
+
+For superconducting rf technology that is used in the linacs of
+proposed accelerators such as Project X and ILC, the accelerator
+cavity is designed to minimize the effects of high-order-modes
+(HOMs) to maintain beam stability and to limit extra heat losses
+on cryogenics. However, during the fabrication process, the SRF
+cavity is deformed from its designed shape because of loose
+machining tolerance and the tuning procedure, the HOM properties
+such as their external Q can be substantially changed to cause
+beam breakup problems at the currents well below the
+designed threshold. Furthermore, misalignments of the cavities in
+a cryomodule will affect the wakefield even though the
+imperfection effects in a single cavity is well understood.
+Simulation using the capacity of supercomputers will be an
+invaluable tool to study these effects and will provide insights
+of how to mitigate any possible problems.  In addition, the
+ statistical analysis for a wide range of the scales and
+types of deformation and misalignments in these structures
+require thousands of computers runs to give a reliable account of
+wakefield effects during machine operation.
+
+Another limiting factor that prevents the accelerator from reaching
+high gradients is the generation of dark current, which arises
+from field emissions of electrons from the surface of an
+accelerating structure and their subsequent movement whose
+trajectories are determined by the accelerating rf field. Dark
+current may lead to beam loading of the accelerator structure
+and, if captured, may also produce undesirable backgrounds
+downstream in the detector at the interaction point. Therefore,
+understanding the mechanism of dark current generation and
+capture is essential to the successful development of high
+gradient structures for linear colliders such as the CLIC. Also,
+it was found experimentally that dark current generation was
+enhanced during the transient of the drive power pulse.
+Therefore, it is important to perform a time-domain simulation
+with a realistic driving pulse to determine the dark current
+effects. The capture of dark current downstream may take a long
+distance that may involve multiple accelerating modules. The
+number of time steps and the number of particles for tracking
+needed for these large-scale simulations requires tens of
+millions CPU hours on state-of-the-art supercomputers.
+
+In addition to electromagnetic properties, the
+studies of thermal and mechanical properties are necessary for
+the full design of a cavity. One first calculates the
+electromagnetic properties of an accelerating mode in the cavity,
+and then uses them to determine the thermal and/or mechanical
+properties, which may be used to evaluate the changes in
+electromagnetic properties due to thermal expansion or mechanical
+deformation. For the integrated simulation of cavities, the study
+of these multi-physics effects is a computationally challenging
+problem due to the complexity of the cavity geometry and the
+different types of physics. The complexity of the modeling arises from 
+the fully-dressed SC
+cavity together with fast tuner, slow tuner, rf coupler and
+helium vessel, as well as the connections to cavity string
+installation inside the cryomodule. In addition to improving
+existing thermal solvers to handle various boundary conditions
+form the external thermal loads, new parallel mechanical solvers
+are needed to address important effects such as microphonics. This
+new development will provide a transformative tool that can
+facilitate a full design optimization of the machine including
+all the details and complexities that are involved in the system.
+
+
+
