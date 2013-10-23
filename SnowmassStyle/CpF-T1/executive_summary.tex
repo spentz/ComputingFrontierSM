@@ -28,47 +28,42 @@ Particle accelerators are critical to scientific discovery, both nationally and 
 \subsection{Simulations} \label{subsec:accel-simu}
 The requirements for high-fidelity computer simulations of accelerator systems and accelerator components are driven by the need to develop and optimize new accelerator concepts and design machines based on these concepts, and maximize the performance of existing accelerators based on existing concepts and technologies.  For  Energy Frontier applications this means supporting the development of new techniques that will increase the accelerating gradients so future machines are more compact and less costly. The options considered in our study include acceleration in plasma structures, using either laser- or beam-driven wakefields, dielectric structures driven by lasers or RF (GHz), the development of new lepton collider designs such as muon colliders and two-beam acceleration, and optimization of existing technologies such as superconducting rf cavities. For  Intensity Frontier applications, simulations are essential in developing and optimizing integrated designs in order to minimize beam losses.  Such loases are caused by instabilities generated either by beam self-interactions, or by interactions of the beam with the accelerator structures or other media present in the beam pipe.  The simulations considered in our study focused on designing mitigation techniques and determining optimal operational parameters.  Hadron colliders at the Energy Frontier have similar requirements, although self-interactions are not important, while beam-beam interactions (which are similarly computationally intensive) have to be included.  
 
-Simulations of accelerators for both the Energy and the Intensity frontier are computationally demanding because they often involve a wide range of time and length scales and a wide spectrum of interoperating physics components. For example, high intensity proton drivers of the order of $10^3$ m, operating at an EM wavelength of $10^2$--$10$ m with components of the order of $10$--$1$ m must resolve particle bunches of the order of $10^{-3}$ m. Similarly, laser-plasma accelerators (LPA) of the order of $1$ m in length must resolve laser wavelength and electron bunch size of the order of $1$ $\mu$m.
+Simulations of accelerators for both the Energy and the Intensity frontiers are computationally demanding because they often involve a wide range of time and length scales and a wide spectrum of interoperating physics components. For example, simulations of high-intensity proton drivers which are a few km long and operate using EM wavelengths of $10$-$100$ m,  with machine components of the order of $1$-$10$ m, must resolve particle bunches of the order of a few mm. Similarly, laser-plasma accelerators (LPA) of the order of $1$ m in length must resolve laser wavelength and electron bunch size of the order of $1$ $\mu$m.
 
-Most of software for accelerator science are already  highly parallelized and scalable to $> 10$k cores on High Performance Computer. They use a wide variety of numerical models, such as electrostatic (multigrid, AMR multigrid, spectral), electromagnetic (finite difference, finite element direct and hybrid, extended stencil finite-difference, AMR finite-difference), quasi-static (spectral), and  matrix solvers, Particle in Cell, meshin and other libraries, and a variety of analysis tools. In addition, there are ongoing R\&D efforts to port these numerical models on new architectures such as GPU based machines.
+Most of software for accelerator science are already  highly parallelized and scalable to $> 10$k cores on high performance computers. Modeling physical fields using various approximations requires different numerical methods. For example, electrostatic models utilze multigrid, Adaptive Mesh Refinment (AMR) multigrid or spectral methods, while various finite difference and finite element methods are best for fully electromagnetic models (finite element direct and hybrid, extended stencil finite difference, AMR finite difference). Quasi-static models require spectral methods, while Adaptive Mesh Refinment could be necessary in many of these models, as are matrix solvers, Particle in Cell, mesh generator and other libraries, and a variety of analysis tools. There are ongoing R\&D efforts to port these numerical models on new architectures such as GPU based machines.
 
 The computational and computing needs for supporting Accelerator
-Science are dominated by the need to optimally utilize
+Science are dominated by the need to efficiently take advantage of 
 High-Performance-Computing (HPC) and the availability of tools
-and resources that makes this utilization possible.  Here HPC is
-defined in the conventional way, where parallelism and fast
-interconnect is essential to the computation, since each
+and resources that makes this possible.  Each
 simulation step requires communication between thousands to
-millions of processors. The projected computing  needs for all
+millions of processors and parallelism and fast
+interconnect are essential to the computation. The projected computing  needs for all
 the major modeling applications from both energy and intensity
-frontiers is shown in Table~\ref{tab:CompNeeds}, where the units
-are based on the current performance of our codes on Hopper at
+frontiers are shown in Table~\ref{tab:CompNeeds}, where the values 
+are based on the current performance of our codes on the Hopper supercomputer at
 NERSC. Note that in this report we do not detail data storage and
 networking needs (with one exception), because our area will not
 drive the overall requirements, which are dominated by HEP
 experiment needs.  We will leverage from the solutions
 implemented to support these programs.
 
-A common theme from the requirements communicated both by our
-user community (accelerator scientists operating machines or
-performing R\&D at test facilities) and computational accelerator
-physicists, is the need for programmatic coordination and support
-of code development and computing R\&D to create a sustainable
-computational accelerator science program.  Porting of our
+Our user community (accelerator scientists operating machines or performing R\&D) and our own community (computational accelerator physicists and theorists) identified the need for programmatic coordination and support of code development and computing R\&D to create a sustainable
+computational accelerator science program as an essential requirement for the future.   Porting of our
 algorithms and workflows to new computing architectures
 (light-weight CPU plus accelerator) and the R\&D necessary to
 create and evaluate new algorithms is an important component of
 such coordinated program (including close interactions with HPC
 centers to utilize test-beds of new architectures). An example of
-such programmatic support today is the SciDAC program, although
+such programmatic support of code development today is the SciDAC program, although
 it is desirable that in the future there is more focus on the
 specific physics solutions needed to further develop our tools.  Another
 common theme is the need for supporting the development of
 community libraries and tools, including standardized user
 interfaces, geometry and data descriptions, I/O and analysis tools.
 Because our applications require true HPC capabilities,
-development of generic workflow tools that perform in an HPC
-environment as well as local workstations and clusters is very important, as is the development and
+it is important to develop generic workflow tools that perform in an HPC
+environment as well as on local workstations and clusters, as is the development and
 integration to our toolkit of parameter optimization libraries,
 that will be available across all HPC platforms.  The development
 of such environment will enable experimentalists and machine
@@ -81,13 +76,12 @@ coordinate physics model validation and verification, ultimately
 with comparisons to experimental data of well controlled
 experiments in test facilities or operating accelerators.
 
-
+\subsection{Feedback and Control Systems}
 Intensity Frontier machines of the future require control room
-feedback capabilities (because of the loss implications), a
-capability that is also important to Energy Frontier test
-facilities (for guiding and interpreting experiments).   Would it
-be possible with utilization of new computing technologies to
-deliver such fast turnaround?  The challenge on both the
+feedback capabilities because of the beam-loss implications.  This 
+capability is also important to Energy Frontier test
+facilities for guiding and interpreting experiments.   The utilization of new computing technologies could make 
+delivering  such a fast turnaround possible. The challenge on both the
 performance of the computational tools and the availability of
 computing resources becomes even  more daunting if we consider
 the need to analyze the simulated data in order to extract useful
@@ -96,21 +90,21 @@ to produce the same quantities observed by the beam diagnostic
 detectors.  Note that this is a more general requirement, because
 it is necessary for accurate comparisons of simulated and
 observed data independently of the ability to do that in ``almost
-real-time'' in the control room.  The necessary analysis workflow
+real-time'' in the control room.  Analysis workflow
 and synthetic diagnostic tools similar to those used by HEP
-experiments has to be developed to properly model the detector
+experiments have to be developed to properly model the detector
 response and maintain and correlate the information of the
-simulated physics variables to those smeared by the model of the
-diagnostics.  Such analysis tools have to be HPC capable, to
+simulated physics variables to those "smeared" by modeling the
+beam diagnostics.  Such analysis tools have to be HPC capable, to
 allow for the fast turnaround necessary for control room
-feedback, and they will also require development of new models
+feedback, and they will also require new models
 and algorithms.  Finally, this is probably the only application
 in accelerator modeling that data transfer speed and data
 availability, storage, and cataloging has similar requirements to
-those of a HEP experiment DAQ system.
+those of a  DAQ system for a HEP experiment.
 
 
-
+\subsection{Multi-physics modeling}
  Different applications have different specific
 requirements for the development of new or more efficient physics
 or computational models, but all of them require integrated
@@ -128,6 +122,7 @@ stages, both plasma physics tools and conventional beam-dynamics
 tools have to be used in the model to produce an optimal
 solution).
 
+\subsection{Design optimization}
 Intensity Frontier accelerator needs are dominated by the need to
 control and mitigate beam losses.  This demands both careful
 design of the accelerator structures and accurate modeling of
